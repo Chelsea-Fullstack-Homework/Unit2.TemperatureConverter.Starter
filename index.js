@@ -2,10 +2,13 @@
 
 /**
  * Takes a F number and returns the number to C
+ * Formula : (32°F − 32) × 5/9 = 0°C
  * @param {string} fahren temperature in degrees F
  * @returns {number} the number of degrees C
  */
-function convertToCelsius(fahren) {}
+function convertToCelsius(fahren) {
+  return ((fahren - 32) * (5/9));
+}
 
 /**
  * Takes both numbers (F, C) and display a message with
@@ -22,14 +25,32 @@ function convertToCelsius(fahren) {}
  * @param {number} fahren
  * @param {number} celc
  */
-function createMessage(fahren, celc) {}
+function createMessage(fahren, celc) {
+  let feels;
+  if (fahren  < 32) {
+    feels = "very cold";
+  } else if (fahren < 64) {
+    feels = "cold";
+  } else if (fahren < 86) {
+    feels = "warm";
+  } else {
+    feels = "hot";
+  }
+
+  let message = 
+    "The temperature " + fahren + 
+    " (" + celc + ") feels like " +  feels;
+  return message;
+}
 
 /**
  * Takes a number and returns a random integer from 0 to the limit
  * @param {number} limit
  * @returns {number} a number between 0 and the int passed in
  */
-function rand(limit) {}
+function rand(limit) {
+  return Math.floor(Math.random() * (limit + 1));
+}
 
 // -------------------- DONT NOT CHANGE THE CODE BELOW ---------------------- //
 
